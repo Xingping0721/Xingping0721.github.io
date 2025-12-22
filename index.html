@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スマホ教室</title>
+  <title>スマホの使い方</title>
   <style>
     body {
       font-size: 18px;
@@ -12,17 +12,17 @@
       font-family: sans-serif;
       background-color: #fff8f0;
       color: #333;
+      text-align: center;
     }
     h1 {
       font-size: 24px;
-      text-align: center;
       margin-bottom: 20px;
     }
     button {
       display: block;
-      width: 100%;
+      width: 80%;
       padding: 15px;
-      margin: 10px 0;
+      margin: 15px auto;
       font-size: 18px;
       border: none;
       border-radius: 10px;
@@ -32,20 +32,14 @@
     button:active {
       background-color: #ff9933;
     }
-    p {
-      margin-bottom: 15px;
-    }
   </style>
 </head>
 <body>
-  <h1>スマホの使い方教室</h1>
-  
-  <p>スマホを使うときに必要なことをわかりやすく説明します。</p>
-  
-  <button onclick="alert('電話のかけ方を説明')">電話のかけ方</button>
-  <button onclick="alert('写真の撮り方を説明')">写真の撮り方</button>
-  <button onclick="alert('アプリの使い方を説明')">アプリの使い方</button>
+  <h1> 簡単なスマホの使い方</h1>
+  <p>知りたい操作を選んでね</p>
 
-  <p>分からないことがあったら、ボタンを押してみてね！</p>
+  <button onclick="location.href='call.html'">電話のかけ方</button>
+  <button onclick="location.href='photo.html'">写真の撮り方</button>
+  <button onclick="location.href='app.html'">アプリの使い方</button>
 </body>
 </html>
