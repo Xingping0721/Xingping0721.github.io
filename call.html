@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,32 +13,20 @@
       background-color: #f0fff0;
       color: #333;
     }
-
     h1 {
       font-size: 24px;
       text-align: center;
       margin-bottom: 20px;
     }
-
     p {
       margin-bottom: 15px;
     }
-
-    .video-placeholder {
-      width: 100%;
-      max-width: 400px;
-      height: 220px;
-      background-color: #ccc;
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    video {
+      display: block;
       margin: 20px auto;
+      max-width: 100%;
       border-radius: 10px;
-      font-size: 16px;
-      text-align: center;
     }
-
     a.button {
       display: block;
       width: 80%;
@@ -52,13 +39,11 @@
       border-radius: 10px;
       font-size: 18px;
     }
-
     a.button:active {
       background-color: #45a049;
     }
   </style>
 </head>
-
 <body>
   <h1>電話のかけ方／受け方</h1>
 
@@ -67,13 +52,8 @@
   <p>3. 通話が始まります。終了するときは赤いボタンを押します。</p>
   <p>4. 受けるときは画面の緑のボタンをスワイプしてください。</p>
 
-  <div style="text-align:center; margin:20px 0;">
-    <iframe width="360" height="220" src="https://youtube.com/shorts/rHW1tkNQVFc?feature=share" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-  </div>
+  <video src="video/call.mp4" controls autoplay muted></video>
 
   <a class="button" href="index.html">選択画面に戻る</a>
 </body>
-
 </html>
