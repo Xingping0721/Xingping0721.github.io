@@ -4,105 +4,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>簡単なスマホの使い方 - 選択画面</title>
+  <title>Pixel 9a かんたんガイド</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
   <style>
+    :root {
+      /* Pixelらしい配色パレット */
+      --bg-color: #f0f4f8;        /* 薄い青グレー */
+      --card-bg: #ffffff;         /* 白 */
+      --primary-color: #006c75;   /* 落ち着いたティールブルー */
+      --accent-color: #dbece8;    /* 薄いアクセント */
+      --text-main: #191c1c;       /* 濃いグレー */
+      --text-sub: #40484b;        /* 少し薄いグレー */
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      --shadow-active: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
     body {
-      font-size: 18px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
       line-height: 1.6;
-      padding: 20px;
-      font-family: sans-serif;
-      background-color: #fff8f0;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ヘッダー周り */
+    header {
+      background-color: var(--card-bg);
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
     }
 
     h1 {
       font-size: 24px;
-      text-align: center;
-      margin-bottom: 20px;
+      color: var(--primary-color);
+      margin: 0 0 10px 0;
     }
 
-    h2 {
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
+    .update-date {
+      font-size: 12px;
+      color: var(--text-sub);
+      background: var(--accent-color);
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
     }
 
-    button {
-      display: block;
-      width: 80%;
+    /* コンテンツ幅の制限（PCで見ても間延びしないように） */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    /* 警告ボックス */
+    .alert-box {
+      background-color: #fff4e5;
+      border-left: 5px solid #ffb74d;
       padding: 15px;
-      margin: 8px auto;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 14px;
+      color: #663c00;
+    }
+
+    /* 用語説明エリア */
+    .term-box {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+    }
+    .term-box h2 {
+      margin-top: 0;
       font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background-color: #ffb347;
-      color: white;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
     }
-
-    button:active {
-      background-color: #ff9933;
-    }
-
-    p {
-      text-align: center;
-    }
-    .instruction {
-      font-size: 22px;
+    .term-list dt {
       font-weight: bold;
-      margin: 30px 0 20px 0;
+      color: var(--primary-color);
+      float: left;
+      width: 100px;
+    }
+    .term-list dd {
+      margin-left: 100px;
+      margin-bottom: 8px;
+    }
+
+    /* セクション見出し */
+    h2.section-title {
+      font-size: 18px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid var(--primary-color);
+      color: var(--text-sub);
+    }
+
+    /* ボタン（カードスタイル） */
+    .menu-button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      background-color: var(--card-bg);
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    /* アイコンのスタイル */
+    .menu-button .material-symbols-rounded {
+      font-size: 28px;
+      color: var(--primary-color);
+      margin-right: 15px;
+      background: var(--accent-color);
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .menu-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    .menu-button:active {
+      transform: translateY(0);
+      background-color: #f5f5f5;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 50px;
       padding-top: 20px;
-      border-top: 2px solid #ccc;
-      color: #ff6b35;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 
 <body>
-  <h1>スマホの使い方 for Pixel 9a</h1>
-  <h1>このホームページは現在制作途中のため、リンク切れになってる場合があります。<h1>
-      <h1>latest update: 2025_12_24</h1>
 
-      <h2>用語について</h2>
-      <p>
-        <strong>タップ</strong> → 「ポンと叩く」<br>
-        <strong>スワイプ</strong> → 「なぞる」<br>
-        <strong>アイコン</strong> → 「絵のボタン」
-      </p>
-      <p class="instruction">知りたい操作をタップしてください</p>
+  <header>
+    <h1>Pixel 9a かんたんガイド</h1>
+    <span class="update-date">最終更新: 2025.12.24</span>
+  </header>
 
-      <!-- 基本操作カテゴリ -->
-      <h2>基本操作</h2>
-      <button onclick="location.href='power.html'">電源の入れ方／切り方</button>
-      <button onclick="location.href='unlock.html'">画面のロック解除</button>
-      <button onclick="location.href='home.html'">ホーム画面の使い方</button>
-      <button onclick="location.href='swipe.html'">画面スワイプ操作</button>
-      <button onclick="location.href='volume.html'">音量の調整</button>
-      <button onclick="location.href='screenshot.html'">スクリーンショットの撮り方</button>
+  <div class="container">
 
-      <!-- アプリ操作カテゴリ -->
-      <h2>アプリの使い方</h2>
-      <button onclick="location.href='call.html'">電話のかけ方／受け方</button>
-      <button onclick="location.href='message.html'">メッセージの送り方</button>
-      <button onclick="location.href='camera.html'">写真の撮り方／アルバムの見方</button>
-      <button onclick="location.href='apps.html'">アプリのインストール／アンインストール</button>
-      <button onclick="location.href='qr.html'">QRコードの読み取り</button>
-      <button onclick="location.href='browser.html'">ブラウザの使い方</button>
-      <button onclick="location.href='maps.html'">Google Mapsの使い方</button>
+    <div class="alert-box">
+      <strong>⚠️ 制作中のページです</strong><br>
+      現在リンク切れになっている箇所があるかもしれません。予めご了承ください。
+    </div>
 
-      <!-- 設定・安全カテゴリ -->
-      <h2>設定・安全</h2>
-      <button onclick="location.href='wifi.html'">Wi-Fi接続</button>
-      <button onclick="location.href='brightness.html'">画面の明るさ調整</button>
-      <button onclick="location.href='notifications.html'">通知の管理</button>
-      <button onclick="location.href='permissions.html'">アプリの権限確認</button>
-      <button onclick="location.href='battery.html'">バッテリー確認と充電</button>
-      <button onclick="location.href='safety.html'">怪しいメッセージや電話の見分け方</button>
+    <div class="term-box">
+      <h2>基本用語</h2>
+      <dl class="term-list">
+        <dt>タップ</dt>
+        <dd>画面を「ポン」と叩くこと</dd>
+        <dt>スワイプ</dt>
+        <dd>画面を指で「なぞる」こと</dd>
+        <dt>アイコン</dt>
+        <dd>画面にある「絵のボタン」</dd>
+      </dl>
+    </div>
 
-      <h2>まだ未完成</h2>
-      すべてのページを確認してないため、整合性があってない可能性があります。<br>
-      エンジニアの方へ、Pull RequestやIssueでのご指摘・ご協力をお待ちしております。<br>
+    <p style="text-align:center; color: var(--text-sub); margin-bottom: 20px;">
+      👇 知りたい操作を選んでください
+    </p>
+
+    <h2 class="section-title">基本操作</h2>
+    <button class="menu-button" onclick="location.href='power.html'">
+      <span class="material-symbols-rounded">power_settings_new</span>
+      電源の入れ方／切り方
+    </button>
+    <button class="menu-button" onclick="location.href='unlock.html'">
+      <span class="material-symbols-rounded">lock_open</span>
+      画面のロック解除
+    </button>
+    <button class="menu-button" onclick="location.href='home.html'">
+      <span class="material-symbols-rounded">home</span>
+      ホーム画面の使い方
+    </button>
+    <button class="menu-button" onclick="location.href='swipe.html'">
+      <span class="material-symbols-rounded">swipe</span>
+      画面スワイプ操作
+    </button>
+    <button class="menu-button" onclick="location.href='volume.html'">
+      <span class="material-symbols-rounded">volume_up</span>
+      音量の調整
+    </button>
+    <button class="menu-button" onclick="location.href='screenshot.html'">
+      <span class="material-symbols-rounded">screenshot</span>
+      画面の保存 (スクショ)
+    </button>
+
+    <h2 class="section-title">アプリの使い方</h2>
+    <button class="menu-button" onclick="location.href='call.html'">
+      <span class="material-symbols-rounded">call</span>
+      電話のかけ方／受け方
+    </button>
+    <button class="menu-button" onclick="location.href='message.html'">
+      <span class="material-symbols-rounded">mail</span>
+      メッセージの送り方
+    </button>
+    <button class="menu-button" onclick="location.href='camera.html'">
+      <span class="material-symbols-rounded">photo_camera</span>
+      写真・アルバム
+    </button>
+    <button class="menu-button" onclick="location.href='apps.html'">
+      <span class="material-symbols-rounded">apps</span>
+      アプリの追加・削除
+    </button>
+    <button class="menu-button" onclick="location.href='qr.html'">
+      <span class="material-symbols-rounded">qr_code_scanner</span>
+      QRコード読み取り
+    </button>
+    <button class="menu-button" onclick="location.href='browser.html'">
+      <span class="material-symbols-rounded">public</span>
+      インターネットを見る
+    </button>
+    <button class="menu-button" onclick="location.href='maps.html'">
+      <span class="material-symbols-rounded">map</span>
+      地図 (Google Maps)
+    </button>
+
+    <h2 class="section-title">設定・安全</h2>
+    <button class="menu-button" onclick="location.href='wifi.html'">
+      <span class="material-symbols-rounded">wifi</span>
+      Wi-Fi (ワイファイ)
+    </button>
+    <button class="menu-button" onclick="location.href='battery.html'">
+      <span class="material-symbols-rounded">battery_full</span>
+      電池・充電の確認
+    </button>
+    <button class="menu-button" onclick="location.href='safety.html'">
+      <span class="material-symbols-rounded">security</span>
+      詐欺・迷惑メール対策
+    </button>
+
+    <footer>
+      <p>すべてのページを確認していないため、整合性が合っていない可能性があります。<br>
+      エンジニアの方へ: Pull RequestやIssueをお待ちしております。</p>
+    </footer>
+
+  </div>
 </body>
-
 </html>
