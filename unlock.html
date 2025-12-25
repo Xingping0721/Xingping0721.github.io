@@ -81,10 +81,82 @@
       padding: 0 20px 40px;
     }
 
+    h2 {
+      font-size: 18px;
+      color: var(--text-sub);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid var(--primary-color);
+    }
+
     p {
       font-size: 16px;
       margin-bottom: 15px;
       line-height: 1.8;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    .method-section {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .method-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .recommend {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    img {
+      display: block;
+      width: 55vw;
+      max-width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin: 20px auto;
+    }
+
+    video {
+      display: block;
+      width: 55vw;
+      max-width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin: 20px auto;
     }
 
     footer {
@@ -132,8 +204,39 @@
   </header>
 
   <div class="container">
-    <p>1. PINやパターンを入力して解除します。</p>
-    <p>2. 指紋認証が設定されていれば、指を置くだけでも解除できます。</p>
+    <h2>画面のロック解除方法</h2>
+    
+    <div class="method-section">
+      <p><strong><span class="material-symbols-rounded" style="vertical-align: middle; font-size: 20px;">dialpad</span> 方法1：PINで解除</strong></p>
+    <ul>
+      <li>画面をタップまたは電源ボタンを押して画面を起動します。</li>
+      <li>画面を下から上にスワイプします。</li>
+      <li>PIN、パターン、またはパスワードを入力します。</li>
+    </ul>
+    </div>
+    
+    <div class="method-section">
+      <p><strong><span class="material-symbols-rounded" style="vertical-align: middle; font-size: 20px;">fingerprint</span> 方法2：指紋認証で解除 <span class="recommend">← おすすめ！</span></strong></p>
+    <ul>
+      <li>画面をタップまたは電源ボタンを押して画面を起動します。</li>
+      <li>画面に指紋のマークが表示されたら、登録した指を<a href="hardware.html#fingerprint-sensor" style="color: var(--primary-color); text-decoration: underline;">指紋センサー</a>に当てます。</li>
+      <li>自動的にロック解除され、画面が開きます。</li>
+    </ul>
+    
+      <p>💡 <strong>ポイント：</strong> 指紋センサーは画面の下の方にあります。画面に指紋のマークが表示されている場所に指を当ててください。</p>
+    </div>
+
+    <div class="method-section">
+      <p><strong><span class="material-symbols-rounded" style="vertical-align: middle; font-size: 20px;">face</span> 方法3：顔認証で解除</strong></p>
+    <ul>
+      <li>画面をタップまたは電源ボタンを押して画面を起動します。</li>
+      <li>登録した顔を画面に向けます。画面の上の方のカメラの周りが白い丸で表示されます。</li>
+      <li>ロック解除できると、指紋のマークが南京錠が開いたマークに変わります。</li>
+      <li>南京錠のマークをタップするか、画面を下から上にスワイプして画面を開きます。</li>
+    </ul>
+    
+      <p>💡 <strong>ポイント：</strong> 顔認証は画面の上の方にあるフロントカメラで行われます。</p>
+    </div>
 
     <footer>
       <a href="index.html" class="back-to-index">選択画面に戻る</a>
