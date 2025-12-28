@@ -8,6 +8,8 @@
 
 ## HPにアクセスするQR code
 ![QR_code](../picture/qr.png)
+
+
 https://xingping0721.github.io/pixel_setup.github.io/
 
 ## QR codeの読み方
